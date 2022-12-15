@@ -29,6 +29,4 @@ console.log("Bonjour Bob, aujourd'hui nous faisons une promo \"la fidélité pay
 
 // Chassez le bogue 1
 // Retirez les commentaires devant le code de Tom pour commencer (les 3 lignes ci-dessous)
-// console.log('        Bonjour' + 'Bob' + ",  \
-// \
-// Aujourd\'hui nous faisons une promo \"la fidélité paye\" !");
+console.log("\t\tBonjour Bob,\n\nAujourd\'hui nous faisons une promo \"la fidélité paye\" !");
