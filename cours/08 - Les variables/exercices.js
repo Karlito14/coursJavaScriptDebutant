@@ -22,30 +22,30 @@ try {
 // -- Début des exercices, vous pouvez modifier le fichier à partir d'ici
 // Chassez le bogue 0
 // Décommentez le code suivant pour faire l'exercice
-// let nomParc = "Le Royaume Magique";
-// console.log("Bienvenue au parc d'attractions " + nomparc);
+let nomParc = "Le Royaume Magique";
+console.log("Bienvenue au parc d'attractions " + nomParc);
 
 // Chassez le bogue 1
 // Décommentez le code suivant pour faire l'exercice
-// let clientsHier = "359";
-// let clientsAujourdhui = 374;
-// let totalClients = clientsHier + clientsAujourdhui;
-// console.log(totalclients);
+let clientsHier = 359;
+let clientsAujourdhui = 374;
+let totalClients = clientsHier + clientsAujourdhui;
+console.log(totalClients);
 
 // Chassez le bogue 2
 // Décommentez le code suivant pour faire l'exercice
-// let nombreDeCases = 64;
-// let case = 2;
-// let superficie = nombreDeCases * case;
-// console.log("Superficie du plateau : " + superficie + "m2");
+let nombreDeCases = 64;
+let m2 = 2;
+let superficie = nombreDeCases * m2;
+console.log("Superficie du plateau : " + superficie + "m2");
 
 // Chassez le bogue 3
 // Décommentez le code suivant pour faire l'exercice
-// let h = 13;
-// let m = 37;
-// let separateur = h;
-// let horaire = H + separateur + M;
-// console.log("Bienvenue, il est " + horaire);
+let h = 13;
+let m = 37;
+let separateur = "h";
+let horaire = h + separateur + m;
+console.log("Bienvenue, il est " + horaire);
 
 
 
