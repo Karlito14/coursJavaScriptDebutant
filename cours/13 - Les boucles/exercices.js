@@ -37,8 +37,8 @@ function exercice0(prochainClient) { // Ne supprimez/commentez pas cette ligne
   // prochain client. N'oubliez pas de mettre les parenthèses "()" à la fin de cette instruction !
 
   // Décommentez le code de Tom ci-dessous
-  // let poidsClient = prochainClient.mesurerPoids();
-  // console.log(poidsClient);
+  let poidsClient = prochainClient.mesurerPoids();
+  console.log(poidsClient + " kg");
 
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
@@ -50,9 +50,10 @@ function exercice1(prochainClient) { // Ne supprimez/commentez pas cette ligne
   // <===== VOTRE CODE ICI: Insérez/modifiez le code à partir d'ici =====>
 
   // Décommentez le code de Tom ci-dessous
-  // let poidsClient = prochainClient.mesurerPoids();
-  // console.log(poidsClient);
-  // console.log(poidsClient);
+  let poidsClient = prochainClient.mesurerPoids();
+  console.log(poidsClient);
+  poidsClient = prochainClient.mesurerPoids();
+  console.log(poidsClient);
 
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
@@ -64,8 +65,12 @@ function exercice2(prochainClient) { // Ne supprimez/commentez pas cette ligne
   // <===== VOTRE CODE ICI: Insérez/modifiez le code à partir d'ici =====>
 
   // Décommentez le code de Tom ci-dessous
-  // let poidsClient = prochainClient.mesurerPoids();
-  // console.log(poidsClient);
+  let poidsClient = prochainClient.mesurerPoids();
+  while (poidsClient !== 0) {
+    console.log(poidsClient);
+    poidsClient = prochainClient.mesurerPoids();
+  }
+
 
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
@@ -78,10 +83,27 @@ function exercice3(nombreDeTours) { // Ne supprimez/commentez pas cette ligne
   // Utilisez la variable nombreDeTours qui contient le nombre de tours à faire pour la file d'attente actuelle
 
   // Décommentez le code de Tom ci-dessous
-  // let duree = nombreDeTours * 12;
-  // let nombreHeures = 0;
-  // let nombreMinutes = 0;
-  // console.log(nombreHeures + "h" + nombreMinutes);
+  let duree = nombreDeTours * 12;
+  let nombreHeures = 0;
+  let nombreMinutes = 0;
+
+  while(duree >= 60) {
+    nombreHeures++;
+    duree = duree - 60;
+  }
+
+  nombreMinutes = duree;
+
+  if (nombreHeures < 10) {
+    nombreHeures = "0" + nombreHeures;
+  }
+  if (nombreMinutes < 10) {
+    nombreMinutes = "0" + nombreMinutes;
+  }
+
+
+  console.log(nombreHeures + "h" + nombreMinutes);
+
 
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
@@ -94,8 +116,12 @@ function exercice4(longueurGuirlande) { // Ne supprimez/commentez pas cette lign
   // Utilisez la variable longueurGuirlande qui contient le nombre d'étoiles à afficher pour la guirlande
 
   // Décommentez le code de Tom ci-dessous
-  // let ligne = "";
-  // console.log(longueurGuirlande);
+let ligne ="" ;
+for(let i = 0; i < longueurGuirlande; i++){
+  ligne = ligne + "*";
+}
+
+console.log(ligne);
 
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
@@ -108,8 +134,18 @@ function exercice5(longueurGuirlande) { // Ne supprimez/commentez pas cette lign
   // Utilisez la variable longueurGuirlande qui contient la longueur de la guirland à afficher
 
   // Décommentez le code de Tom ci-dessous
-  // let ligne = "";
-  // console.log(longueurGuirlande);
+let ligne ="" ;
+let symbole = "*";
+for(let i = 0; i < longueurGuirlande; i++){
+  ligne = ligne + symbole;
+  if(symbole === "*"){
+    symbole = "o";
+  } else {
+    symbole ="*";
+  }
+}
+
+console.log(ligne);
 
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 

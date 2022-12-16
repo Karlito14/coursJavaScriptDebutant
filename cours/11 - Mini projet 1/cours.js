@@ -1,7 +1,5 @@
 /* Mini projet : valider un rendez-vous */
 
-// Exemple 1 : pour une durée de RDV de 15 minutes
-
 // Début du RDV : 15h40
 let debutRdvHeures = 15;
 let debutRdvMinutes = 40;
@@ -11,14 +9,25 @@ let finJourneeHeures = 16;
 let finJourneeMinutes = 30;
 
 // Durée du RDV : 15 minutes
-let duree = 15;
+let duree = 20;
 
 // ETAPE 1 : Calcul de la fin du RDV
-let finRdvHeures = debutRdvHeures;
 let finRdvMinutes = debutRdvMinutes + duree;
+let finRdvHeures = debutRdvHeures;
+
+//Correction des problèmes des minutes
+while (finRdvMinutes >= 60) {
+  finRdvMinutes = finRdvMinutes - 60;
+  finRdvHeures++;
+}
+//Correction problème des minutes avant 10
+if (finRdvMinutes < 10) {
+  finRdvMinutes = "0" + finRdvMinutes;
+}
 
 // ETAPE 2 : Est-ce que la fin du RDV est avant la fin de la journée ?
-if (finRdvHeures < finJourneeHeures) {
+if ((finRdvHeures < finJourneeHeures) ||
+  (finRdvHeures === finJourneeHeures && finRdvMinutes < finJourneeMinutes)) {
   console.log("RDV OK");
 } else {
   console.log("RDV impossible");
