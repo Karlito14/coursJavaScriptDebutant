@@ -24,13 +24,13 @@
 // Pour faire cet exercice : 
 // 1. Décommentez le code de Tom ci-dessous
 // 2. Rédigez le corps de la fonction afficherAdresseClient
-// let nom = "Tom REDOCEMIA";
-// let numeroRue = 21;
-// let nomRue = "rue du bloc d'instructions";
-// let codePostal = 1337;
-// let ville = "POINT-VIRGULE";
-// afficherTitre("Destinataire");
-// afficherAdresseClient(nom, numeroRue, nomRue, codePostal, ville);
+let nom = "Tom REDOCEMIA";
+let numeroRue = 21;
+let nomRue = "rue du bloc d'instructions";
+let codePostal = 1337;
+let ville = "POINT-VIRGULE";
+afficherTitre("Destinataire");
+afficherAdresseClient(nom, numeroRue, nomRue, codePostal, ville);
 
 function afficherTitre(titre) {
   console.log("===[ " + titre + " ]===");
@@ -39,16 +39,27 @@ function afficherTitre(titre) {
 // <===== VOTRE CODE ICI: Insérez/modifiez le code à partir d'ici =====>
 // Rédigez la fonction afficherAdresseClient ci-dessous
 function afficherAdresseClient(nom, numeroRue, nomRue, codePostal, ville) {
-
+  let adresse = nom + "\n" + numeroRue + " " + nomRue + "\n" + codePostal + " " + ville;
+  console.log(adresse);
 }
 // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
 // Exercice 1
 // <===== VOTRE CODE ICI: Insérez/modifiez le code à partir d'ici =====> 
 // Complétez le corps de la fonction ci-dessous pour renvoyer la bonne valeur avec le mot-clé return
-// function formaterNumeroClient(numero) { 
-
-// }
+function formaterNumeroClient(numero) {
+  if (numero < 10) {
+    return "CL000" + numero;
+  } else if (numero < 100) {
+    return "CL00" + numero;
+  } else if (numero < 1000) {
+    return "CL0" + numero;
+  } else if (numero < 5000 || numero >= 7000) {
+    return "CL" + numero;
+  } else {
+    return "PR" + numero;
+  }
+}
 // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 
 
@@ -56,14 +67,19 @@ function afficherAdresseClient(nom, numeroRue, nomRue, codePostal, ville) {
 // Pour faire cet exercice : 
 // 1. Décommentez le code de Tom ci-dessous
 // 2. Rédigez le code manquant juste après le code de Tom
-// let adresseMagiciensDuCode = `MagiciensDuCode
-// 42 avenue de l'accolade ouvrante
-// 1337 POINT-VIRGULE`;
-// let numeroClient = 5842;
+let adresseMagiciensDuCode = `MagiciensDuCode
+42 avenue de l'accolade ouvrante
+1337 POINT-VIRGULE`;
+let numeroClient = 5842;
 
-// afficherTitre("Notre adresse");
-// console.log(adresseMagiciensDuCode);
-// console.log("");
+afficherTitre("Notre adresse");
+console.log(adresseMagiciensDuCode);
+console.log("");
+afficherTitre("Destinataire");
+afficherAdresseClient(nom, numeroRue, nomRue, codePostal, ville);
+console.log("");
+afficherTitre("Vos références");
+console.log("N° de client : " + formaterNumeroClient(numeroClient));
 
 // <===== VOTRE CODE ICI: Insérez/modifiez le code à partir d'ici =====>
 // D'ici vous avez accès à toutes les variables précédemment déclarées dont l'adresse de Tom (nom, numeroRue, nomRue, codePostal, ville), adresseMagiciensDuCode et numeroClient.
@@ -76,10 +92,24 @@ function afficherAdresseClient(nom, numeroRue, nomRue, codePostal, ville) {
 function afficherLigneLogo(esp1, esp2, esp3) {
   // <===== VOTRE CODE ICI: Insérez/modifiez le code à partir d'ici =====>
   // Rédigez le corps de la fonction afficherLigneLogo ci-dessous
-
-
+  let symbole = "**";
+  let ligne = "";
+  for (let position = 0; position < esp1; position++) {
+    ligne = ligne + " ";
+  }
+  ligne = ligne + symbole;
+  for (let position = 0; position < esp2; position++) {
+    ligne = ligne + " ";
+  }
+  ligne = ligne + symbole;
+  for (let position = 0; position < esp3; position++) {
+    ligne = ligne + " ";
+  }
+  ligne = ligne + symbole;
+  console.log(ligne)
   // <===== FIN DE VOTRE CODE CI-DESSUS =====>
 }
+
 
 // Voici la liste des appels de la fonction afficherLigneLogo, il ne reste plus qu'à rédiger cette fonction !
 afficherLigneLogo(6, 14, 6);
@@ -92,36 +122,36 @@ afficherLigneLogo(6, 8, 12);
 
 // Chassez le bogue ! 0
 // Tom a découpé son code en plusieurs fonctions, décommentez-le et corrigez les bogues !
-// function construireLigneAvecBoules(longueurLigne) {
-//   let ligne = "";
-//   let symbole = "*";
-//   for (let i = 0; i < longueurLigne; i = i + 1) {
-//     ligne = ligne + symbole;
-//     if (symbole !== "*") {
-//       symbole = "o";
-//     } else {
-//       symbole = "*";
-//     }
-//   }
-//   return ligne;
-// }
+function construireLigneAvecBoules(longueurLigne) {
+  let ligne = "";
+  let symbole = "*";
+  for (let i = 0; i < longueurLigne; i++) {
+    ligne = ligne + symbole;
+    if (symbole === "*") {
+      symbole = "o";
+    } else {
+      symbole = "*";
+    }
+  }
+  return ligne;
+}
 
-// function construirePlusieursEspaces(nombre) {
-//   let ligne = "";
-//   for (let i = 0; i <= nombre; i = i + 1) {
-//     ligne = ligne + " ";
-//   }
-//   return ligne;
-// }
+function construirePlusieursEspaces(nombre) {
+  let ligne = "";
+  for (let i = 0; i < nombre; i++) {
+    ligne = ligne + " ";
+  }
+  return ligne;
+}
 
-// console.log(construirePlusieursEspaces(5) + construireLigneAvecBoules(1));
-// console.log(construirePlusieursEspaces(3) + construireLigneAvecBoules(3));
-// console.log(construirePlusieursEspaces(3) + construireLigneAvecBoules(4));
-// console.log(construirePlusieursEspaces(2) + construireLigneAvecBoules(7));
-// console.log(construirePlusieursEspaces(1) + construireLigneAvecBoules(10));
-// console.log(construirePlusieursEspaces(0) + construireLigneAvecBoules(11));
+console.log(construirePlusieursEspaces(5) + construireLigneAvecBoules(1));
+console.log(construirePlusieursEspaces(4) + construireLigneAvecBoules(3));
+console.log(construirePlusieursEspaces(3) + construireLigneAvecBoules(5));
+console.log(construirePlusieursEspaces(2) + construireLigneAvecBoules(7));
+console.log(construirePlusieursEspaces(1) + construireLigneAvecBoules(9));
+console.log(construirePlusieursEspaces(0) + construireLigneAvecBoules(11));
 
-// for (let i = 0; i < 2; i = i + 1) {
-//   console.log(construirePlusieursEspaces(4) + "***");
-// }
+for (let i = 0; i <= 2; i++) {
+  console.log(construirePlusieursEspaces(4) + "***");
+}
 

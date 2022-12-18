@@ -89,7 +89,7 @@ function afficherLigneLogo(esp1, esp2, esp3) {
 function construireLigneAvecBoules(longueurLigne) {
   let ligne = "";
   let symbole = "*";
-  for (let i = 0; i < longueurLigne; i = i + 1) {
+  for (let i = 0; i < longueurLigne; i++) {
     ligne = ligne + symbole;
     if (symbole === "*") {
       symbole = "o";
@@ -102,7 +102,7 @@ function construireLigneAvecBoules(longueurLigne) {
 
 function construirePlusieursEspaces(nombre) {
   let ligne = "";
-  for (let i = 0; i < nombre; i = i + 1) {
+  for (let i = 0; i < nombre; i++) {
     ligne = ligne + " ";
   }
   return ligne;
