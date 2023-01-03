@@ -9,6 +9,10 @@ function calculerTVA(prixHT) {
   return prixHT * TVAEnPourcent / 100;
 }
 
+function prixHT(produit) {
+  return totalHT = totalHT + produit;
+}
+
 let totalHT = 0;
 let totalTVA = 0;
 let totalTTC = 0;
@@ -18,11 +22,11 @@ let prixTarteAuxPommesHT = 5;
 ecrireTitre("Liste d'articles v0");
 
 ecrireArticle("Chocolat chaud", prixChocolatChaudHT);
-totalHT = totalHT + prixChocolatChaudHT;
+prixHT(prixChocolatChaudHT);
 totalTVA = totalTVA + calculerTVA(prixChocolatChaudHT);
 
 ecrireArticle("Tarte aux pommes", prixTarteAuxPommesHT);
-totalHT = totalHT + prixTarteAuxPommesHT;
+prixHT(prixTarteAuxPommesHT);
 totalTVA = totalTVA + calculerTVA(prixTarteAuxPommesHT);
 
 ecrireTitre("Montant total");

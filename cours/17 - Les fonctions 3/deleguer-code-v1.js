@@ -7,6 +7,8 @@ function calculerTVA(prixHT) {
 
 let prixChocolatChaudHT = 2;
 let prixTartesAuxPommesHT = 5;
+let prixCoca = 2;
 
 console.log("TVA : " + calculerTVA(prixChocolatChaudHT) + " €");
 console.log("TVA : " + calculerTVA(prixTartesAuxPommesHT) + " €");
+console.log("TVA : " + calculerTVA(prixCoca) + " €");
